@@ -1,7 +1,7 @@
 import type { IconMap, SocialLink, Site } from '@/types'
 
 export const SITE: Site = {
-  title: 'Your Blog Name',
+  title: 'RadiantNerd',
   description:
     'A brief description of your blog. This will be used in meta tags and social sharing.',
   href: 'https://yourdomain.com',
@@ -44,11 +44,23 @@ export const BREVO = {
 export const NAV_LINKS: SocialLink[] = [
   {
     href: '/blog',
-    label: 'Blog',
+    label: 'News',
+  },
+  {
+    href: '/gamedev',
+    label: 'Gamedev',
+  },
+  {
+    href: '/services',
+    label: 'Services',
   },
   {
     href: '/about',
     label: 'About',
+  },
+  {
+    href: '/contact',
+    label: 'Contact',
   },
 ]
 
