@@ -3,7 +3,7 @@ import type { IconMap, SocialLink, Site } from '@/types'
 export const SITE: Site = {
   title: 'RadiantNerd',
   description:
-    'RadiantNerd is a multimedia site for news on my gamedev journey and everything else in life that I think is cool and interesting. ',
+    'RadiantNerd is a multimedia site for news about my gamedev journey and everything else in life that I think is cool and interesting.',
   href: 'https://radiantnerd.com',
   author: 'radiantnerd',
   locale: 'en-US',
@@ -66,7 +66,7 @@ export const NAV_LINKS: SocialLink[] = [
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
-    href: 'https://github.com/username',
+    href: 'https://github.com/gdurbin',
     label: 'GitHub',
   },
   {
@@ -100,11 +100,4 @@ export const ICON_MAP: IconMap = {
   YouTube: 'lucide:youtube',
   Email: 'lucide:mail',
   RSS: 'lucide:rss',
-}
-
-// Newsletter consent text (centralized for GDPR compliance)
-export const NEWSLETTER_CONSENT_TEXT = {
-  text: 'I agree to receive newsletter emails.',
-  privacyLink: '/privacy',
-  privacyText: 'Privacy Policy',
 }

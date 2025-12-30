@@ -9,12 +9,12 @@ import { getAllPosts, groupPostsByYear } from '@/lib/data-utils'
 import type { PaginateFunction } from 'astro'
 
 export async function getStaticPaths({
-  paginate,
+	paginate,
 }: {
-  paginate: PaginateFunction
+	paginate: PaginateFunction
 }) {
-  const allPosts = await getAllPosts()
-  return paginate(allPosts, { pageSize: SITE.postsPerPage })
+	const allPosts = await getAllPosts()
+	return paginate(allPosts, { pageSize: SITE.postsPerPage })
 }
 
 const { page } = Astro.props
@@ -24,39 +24,39 @@ const years = Object.keys(postsByYear).sort((a, b) => parseInt(b) - parseInt(a))
 ---
 
 <Layout class="max-w-3xl">
-  <PageHead slot="head" title="Blog" />
-  <Breadcrumbs
-    items={[
-      { label: 'Blog', href: '/blog', icon: 'lucide:library-big' },
-      { label: `Page ${page.currentPage}`, icon: 'lucide:book-copy' },
-    ]}
-  />
+	<PageHead slot="head" title="News" />
+	<Breadcrumbs
+		items={[
+			{ label: 'News', href: '/blog', icon: 'lucide:library-big' },
+			{ label: `Page ${page.currentPage}`, icon: 'lucide:book-copy' },
+		]}
+	/>
 
-  <div class="flex min-h-[calc(100vh-18rem)] flex-col">
-    {
-      years.map((year) => (
-        <section class="flex flex-col">
-          <div class="text-muted-foreground/60 text-xs font-medium uppercase tracking-wider mb-2.5 mt-6 first:mt-0">
-            {year}
-          </div>
-          <ul class="flex flex-col gap-2">
-            {postsByYear[year].map((post) => (
-              <li>
-                <BlogCard entry={post} />
-              </li>
-            ))}
-          </ul>
-        </section>
-      ))
-    }
-  </div>
+	<div class="flex min-h-[calc(100vh-18rem)] flex-col">
+		{
+			years.map((year) => (
+				<section class="flex flex-col">
+					<div class="text-muted-foreground/60 mt-6 mb-2.5 text-xs font-medium tracking-wider uppercase first:mt-0">
+						{year}
+					</div>
+					<ul class="flex flex-col gap-2">
+						{postsByYear[year].map((post) => (
+							<li>
+								<BlogCard entry={post} />
+							</li>
+						))}
+					</ul>
+				</section>
+			))
+		}
+	</div>
 
-  <div class="mt-6">
-    <PaginationComponent
-      currentPage={page.currentPage}
-      totalPages={page.lastPage}
-      baseUrl="/blog/"
-      client:idle
-    />
-  </div>
+	<div class="mt-6">
+		<PaginationComponent
+			currentPage={page.currentPage}
+			totalPages={page.lastPage}
+			baseUrl="/blog/"
+			client:idle
+		/>
+	</div>
 </Layout>
