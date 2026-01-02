@@ -24,12 +24,13 @@ content:
           options: { maxlength: 160 },
         }
       - { name: date, label: Publish Date, type: date, required: true }
-      - { name: authors, label: Author, type: string }
+      - { name: order, label: Order, type: number }
+      - { name: authors, label: Author, type: string[] }
       - { name: image, label: Hero Image, type: image }
       # - { name: heroImageAlt, label: Hero Image ALT Text, type: string }
-      - { name: tags, label: Tags, type: string, list: true }
+      - { name: tags, label: Tags, type: string[], list: true }
       - { name: body, label: Body, type: rich-text }
-      - { name: draft, label: Draft, type: boolean }
+      - { name: draft, label: Draft, type: boolean, default: false }
   - name: social
     label: Social Links
     type: file
