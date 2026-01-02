@@ -8,12 +8,12 @@ content:
     path: src/content/blog
     filename: '{primary}/index.mdx'
     view:
-      fields: [title, pubDate]
+      fields: [title, date]
       primary: title
-      sort: [pubDate, title]
+      sort: [date, title]
       default:
         search: ''
-        sort: pubDate
+        sort: date
         order: desc
     fields:
       - { name: title, label: Title, type: string, required: true }
