@@ -1,0 +1,47 @@
+media:
+  input: public/media
+  output: /media
+content:
+  - name: posts
+    label: Posts
+    type: collection
+    path: src/content/blog
+    filename: '{primary}/index.mdx'
+    view:
+      fields: [title, pubDate]
+      primary: title
+      sort: [pubDate, title]
+      default:
+        search: ''
+        sort: pubDate
+        order: desc
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - {
+          name: description,
+          label: Descirption,
+          type: string,
+          options: { maxlength: 160 },
+        }
+      - { name: date, label: Publish Date, type: date, required: true }
+      - { name: authors, label: Author, type: string }
+      - { name: image, label: Hero Image, type: image }
+      # - { name: heroImageAlt, label: Hero Image ALT Text, type: string }
+      - { name: tags, label: Tags, type: string, list: true }
+      - { name: body, label: Body, type: rich-text }
+      - { name: draft, label: Draft, type: boolean }
+  - name: social
+    label: Social Links
+    type: file
+    path: src/consts.ts
+    list: true
+    fields:
+      - name: name
+        label: Name
+        type: string
+      - name: icon
+        label: Icon
+        type: string
+      - name: href
+        label: HREF
+        type: string
