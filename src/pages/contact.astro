@@ -1,8 +1,10 @@
 ---
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import Link from '@/components/Link.astro'
 import PageHead from '@/components/PageHead.astro'
-import { SITE } from '@/consts'
+import { SITE, SOCIAL_LINKS } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
+import { Icon } from 'astro-icon/components'
 
 // Person Schema for Contact page
 const personSchema = {
@@ -36,8 +38,25 @@ const personSchema = {
 		<!-- Main Content -->
 		<div class="prose prose-sm dark:prose-invert max-w-none space-y-6">
 			<p class="text-muted-foreground leading-relaxed">
-				Please message RadiantNerd if you have a question or suggestions.
+				Have questions or want to collaborate? Feel free to reach out!
 			</p>
+		</div>
+		<div class="pt-4">
+			{
+				SOCIAL_LINKS.find((link) => link.label === 'Email') && (
+					<Link
+						href={SOCIAL_LINKS.find((link) => link.label === 'Email')!.href}
+						class="group bg-foreground text-background hover:bg-foreground/90 focus-visible:ring-ring inline-flex items-center gap-2.5 rounded-lg px-7 py-3.5 text-base font-medium transition-all duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+					>
+						<Icon name="lucide:mail" class="size-4" />
+						<span>Get in touch</span>
+						<Icon
+							name="lucide:arrow-right"
+							class="size-4 transition-transform group-hover:translate-x-1"
+						/>
+					</Link>
+				)
+			}
 		</div>
 	</section>
 </Layout>
