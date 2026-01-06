@@ -25,7 +25,6 @@ content:
       - { name: order, label: Order, type: number }
       - { name: authors, label: Author, type: string, list: true }
       - { name: image, label: Hero Image, type: image }
-      # - { name: heroImageAlt, label: Hero Image ALT Text, type: string }
       - { name: tags, label: Tags, type: string, list: true }
       - { name: body, label: Body, type: rich-text }
       - { name: draft, label: Draft, type: boolean, default: false }
