@@ -2,9 +2,9 @@
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import Link from '@/components/Link.astro'
 import PageHead from '@/components/PageHead.astro'
-import { Button } from '@/components/ui/button.tsx'
-import { SITE } from '@/consts'
+import { SITE, SOCIAL_LINKS } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
+import { Icon } from 'astro-icon/components'
 
 // Person Schema for Gamedev page
 const personSchema = {
@@ -35,6 +35,9 @@ const personSchema = {
 			</div>
 		</div>
 
+		<!-- Subtle Separator -->
+		<div class="bg-border/30 h-px" aria-hidden="true"></div>
+
 		<!-- Main Content -->
 	</section>
 
@@ -57,8 +60,23 @@ const personSchema = {
 				Gameplay Animation Sample Project for Epic Games turned into a plugin.
 			</p>
 		</div>
-		<Button className="w-fit">
-			<Link href="https://docs.radiantnerd.com/rgameanim">Get RGameAnim</Link>
-		</Button>
+
+		<div>
+			{
+				SOCIAL_LINKS.find((link) => link.label === 'Email') && (
+					<Link
+						href="https://docs.radiantnerd.com/rgameanim/download"
+						class="group bg-foreground text-background hover:bg-foreground/90 focus-visible:ring-ring inline-flex items-center gap-2.5 rounded-lg px-7 py-3.5 text-base font-medium transition-all duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+					>
+						<Icon name="lucide:download" class="size-4" />
+						<span>Get RGameAnim</span>
+						<Icon
+							name="lucide:arrow-right"
+							class="size-4 transition-transform group-hover:translate-x-1"
+						/>
+					</Link>
+				)
+			}
+		</div>
 	</section>
 </Layout>

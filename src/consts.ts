@@ -23,13 +23,6 @@ export const UMAMI = {
   websiteId: import.meta.env.PUBLIC_UMAMI_WEBSITE_ID || '',
 }
 
-// Disqus Comments
-// Get your shortname from https://disqus.com/admin/settings/general/
-// Set it as an environment variable: PUBLIC_DISQUS_SHORTNAME=your-shortname
-export const DISQUS = {
-  shortname: import.meta.env.PUBLIC_DISQUS_SHORTNAME || '',
-}
-
 // Brevo Newsletter
 // Get your API key from https://app.brevo.com/settings/keys/api
 // Set it as an environment variable: BREVO_API_KEY=your-api-key
@@ -95,7 +88,7 @@ export const ICON_MAP: IconMap = {
   Website: 'lucide:globe',
   GitHub: 'lucide:github',
   LinkedIn: 'lucide:linkedin',
-  Twitter: 'lucide:twitter',
+  Twitter: 'twitter-x-line',
   Instagram: 'lucide:instagram',
   YouTube: 'lucide:youtube',
   Email: 'lucide:mail',
