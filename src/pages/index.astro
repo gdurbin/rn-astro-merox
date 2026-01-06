@@ -15,53 +15,10 @@ try {
 } catch (error) {
 	console.error('Error fetching recent posts:', error)
 }
-
-// Person Schema for homepage SEO
-const personSchema = {
-	'@context': 'https://schema.org',
-	'@type': 'Person',
-	name: SITE.title,
-	url: SITE.href,
-	description: SITE.description,
-}
-
-// Organization Schema
-const organizationSchema = {
-	'@context': 'https://schema.org',
-	'@type': 'Organization',
-	name: SITE.title,
-	url: SITE.href,
-	description: SITE.description,
-}
-
-// Website Schema
-const websiteSchema = {
-	'@context': 'https://schema.org',
-	'@type': 'WebSite',
-	name: SITE.title,
-	url: SITE.href,
-	description: SITE.description,
-	potentialAction: {
-		'@type': 'SearchAction',
-		target: {
-			'@type': 'EntryPoint',
-			urlTemplate: `${SITE.href}/blog?q={search_term_string}`,
-		},
-		'query-input': 'required name=search_term_string',
-	},
-}
 ---
 
 <Layout class="max-w-3xl" transition:persist="home-layout">
 	<PageHead slot="head" title={SITE.title} fullTitle={true} />
-
-	<!-- Schema Markup for SEO -->
-	<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
-	<script
-		type="application/ld+json"
-		set:html={JSON.stringify(organizationSchema)}
-	/>
-	<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 
 	<!-- Latest from the blog -->
 	{

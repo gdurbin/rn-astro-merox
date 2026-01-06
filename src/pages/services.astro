@@ -1,24 +1,11 @@
 ---
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import PageHead from '@/components/PageHead.astro'
-import { SITE } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
-
-// Person Schema for Services page
-const personSchema = {
-	'@context': 'https://schema.org',
-	'@type': 'Person',
-	name: SITE.title,
-	url: SITE.href,
-	description: SITE.description,
-}
 ---
 
 <Layout class="max-w-3xl">
 	<PageHead slot="head" title="Services" />
-
-	<!-- Person Schema for Services page SEO -->
-	<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 
 	<Breadcrumbs
 		items={[{ label: 'Services', icon: 'lucide:briefcase-business' }]}
