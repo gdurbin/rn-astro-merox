@@ -6,7 +6,7 @@ content:
     label: Posts
     type: collection
     path: src/content/blog
-    filename: '{primary}/index.mdx'
+    filename: '{primary}.mdx'
     view:
       fields: [title, date]
       primary: title
@@ -27,7 +27,7 @@ content:
       - { name: date, label: Publish Date, type: date, required: true }
       - { name: order, label: Order, type: number }
       - { name: authors, label: Author, type: string, list: true }
-      - { name: image, label: Hero Image, type: image }
+      - { name: image, label: Image, type: image }
       - { name: tags, label: Tags, type: string, list: true }
       - { name: body, label: Body, type: rich-text }
       - { name: draft, label: Draft, type: boolean, default: false }
