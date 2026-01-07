@@ -21,6 +21,7 @@ content:
           name: description,
           label: Descirption,
           type: string,
+          required: true,
           options: { maxlength: 160 },
         }
       - { name: date, label: Publish Date, type: date, required: true }
