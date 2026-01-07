@@ -10,7 +10,7 @@ const contactEmail =
 	SOCIAL_LINKS.find((link) => link.label === 'Email')?.href.replace(
 		'mailto:',
 		''
-	) || 'your@email.com'
+	) || 'admin@radiantnerd.com'
 const siteName = SITE.title
 const siteUrl = SITE.href
 ---
@@ -190,8 +190,8 @@ const siteUrl = SITE.href
 			<div class="bg-muted/30 rounded-lg border p-4">
 				<p class="m-0">
 					<strong>Email:</strong>
-					<a href={`mailto:${contactEmail}`} class="underline"
-						>{contactEmail}</a>
+					<a href={`mailto:${contactEmail}`} class="underline">{contactEmail}</a
+					>
 				</p>
 			</div>
 		</section>
